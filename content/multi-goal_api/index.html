@@ -7,9 +7,9 @@
     <meta property="og:title" content="Gymnasium-Robotics Documentation" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="" />
-    <meta property="og:url" content="https://robotics.fenggu.me/content/multi-goal_api.html" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta property="og:url" content="https://robotics.farama.org/content/multi-goal_api.html" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Fetch" href="../../envs/fetch/" /><link rel="prev" title="Installation" href="../installation/" />
-        <link rel="canonical" href="https://robotics.fenggu.me/content/multi-goal_api.html" />
+        <link rel="canonical" href="https://robotics.farama.org/content/multi-goal_api.html" />
 
     <link rel="shortcut icon" href="../../_static/robotics-white.png"/><meta name="generator" content="sphinx-5.2.3, furo 2022.09.15.dev1"/>
         <title>Multi-goal API - Gymnasium-Robotics Documentation</title>
@@ -334,7 +334,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -353,7 +353,6 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Multi-goal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#goalenv">GoalEnv</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
@@ -421,7 +420,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -459,9 +458,8 @@ goal, e.g. state derived from the simulation.</p>
 <span class="n">substitute_truncated</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">compute_truncated</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s2">&quot;achieved_goal&quot;</span><span class="p">],</span> <span class="n">substitute_goal</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
 <section id="goalenv">
-<h1>GoalEnv<a class="headerlink" href="#goalenv" title="Permalink to this heading">#</a></h1>
+<h2>GoalEnv<a class="headerlink" href="#goalenv" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">GoalEnv</span></code> class can also be used for custom environments.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="gymnasium_robotics.core.GoalEnv">
@@ -480,7 +478,7 @@ actual observations of the environment as per usual.</p>
 </dd></dl>
 
 <section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="gymnasium_robotics.core.GoalEnv.compute_reward">
 <span class="sig-prename descclassname"><span class="pre">gymnasium_robotics.core.GoalEnv.</span></span><span class="sig-name descname"><span class="pre">compute_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">achieved_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gymnasium_robotics.core.GoalEnv.compute_reward" title="Permalink to this definition">#</a></dt>
@@ -561,6 +559,7 @@ assert truncated == env.compute_truncated(ob[‘achieved_goal’], ob[‘desired
 
 </section>
 </section>
+</section>
 
         </article>
       </div>
@@ -594,8 +593,36 @@ assert truncated == env.compute_truncated(ob[‘achieved_goal’], ob[‘desired
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Multi-goal API</a><ul>
+<li><a class="reference internal" href="#goalenv">GoalEnv</a><ul>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv"><code class="docutils literal notranslate"><span class="pre">GoalEnv</span></code></a></li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_reward"><code class="docutils literal notranslate"><span class="pre">compute_reward()</span></code></a></li>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_terminated"><code class="docutils literal notranslate"><span class="pre">compute_terminated()</span></code></a></li>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_truncated"><code class="docutils literal notranslate"><span class="pre">compute_truncated()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
