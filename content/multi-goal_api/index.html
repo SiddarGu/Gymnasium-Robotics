@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://robotics.fenggu.me/content/multi-goal_api.html" />
 
     <link rel="shortcut icon" href="../../_static/robotics-white.png"/><meta name="generator" content="sphinx-5.2.3, furo 2022.09.15.dev1"/>
-        <title>– firstpage: lastpage: - Gymnasium-Robotics Documentation</title>
+        <title>Multi-goal API - Gymnasium-Robotics Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=a614025deca43086db03c234d5a3a2047a0241ae" />
@@ -334,7 +334,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -352,10 +352,7 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">–
-firstpage:
-lastpage:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#multi-goal-api">Multi-goal API</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Multi-goal API</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
@@ -423,19 +420,14 @@ lastpage:</a></li>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           
-          <section id="firstpage-lastpage">
-<h1>–
-firstpage:
-lastpage:<a class="headerlink" href="#firstpage-lastpage" title="Permalink to this heading">#</a></h1>
-</section>
-<section id="multi-goal-api">
+          <section id="multi-goal-api">
 <h1>Multi-goal API<a class="headerlink" href="#multi-goal-api" title="Permalink to this heading">#</a></h1>
 <p>The robotic environments use an extension of the core Gymansium API by inheriting from <a class="reference external" href="https://robotics.farama.org/envs/#">GoalEnv</a> class. The new API forces the environments to have a dictionary observation space that contains 3 keys:</p>
 <ul class="simple">
@@ -571,26 +563,8 @@ assert truncated == env.compute_truncated(ob[‘achieved_goal’], ob[‘desired
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../envs/fetch/">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Fetch</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-            <a class="prev-page" href="../installation/">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Installation</div>
-                
-              </div>
-            </a>
+          
+            
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -616,8 +590,33 @@ assert truncated == env.compute_truncated(ob[‘achieved_goal’], ob[‘desired
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Multi-goal API</a><ul>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv"><code class="docutils literal notranslate"><span class="pre">GoalEnv</span></code></a></li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_reward"><code class="docutils literal notranslate"><span class="pre">compute_reward()</span></code></a></li>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_terminated"><code class="docutils literal notranslate"><span class="pre">compute_terminated()</span></code></a></li>
+<li><a class="reference internal" href="#gymnasium_robotics.core.GoalEnv.compute_truncated"><code class="docutils literal notranslate"><span class="pre">compute_truncated()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
