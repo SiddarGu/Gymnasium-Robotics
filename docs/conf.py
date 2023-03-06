@@ -16,9 +16,6 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-# TODO: change to robotics version
-# from TODO import __version__ as robotics_version
-
 import os
 import sys
 from typing import Any, Dict
@@ -30,8 +27,7 @@ copyright = "2022"
 author = "Farama Foundation"
 
 # The full version, including alpha/beta/rc tags
-# TODO: change to Robotics version
-release = "1.0.0"
+release = gymnasium_robotics.__version__
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -76,11 +72,13 @@ html_theme = "furo"
 html_title = "Gymnasium-Robotics Documentation"
 html_baseurl = "https://robotics.farama.org/"
 html_copy_source = False
-html_favicon = "_static/img/robotics-white.png"
+html_favicon = "_static/img/robotics-favicon.png"
 html_theme_options = {
     "light_logo": "img/robotics.png",
     "dark_logo": "img/robotics-white.png",
     "gtag": "G-M37ZN7PPMN",
+    "image": "img/robotics-github.png",
+    "versioning": True,
 }
 html_context: Dict[str, Any] = {}
 html_context["conf_py_path"] = "/docs/"
@@ -92,3 +90,7 @@ html_context["slug"] = "gymnasium"
 
 html_static_path = ["_static"]
 html_css_files = []
+
+# -- Generate Changelog -------------------------------------------------
+
+sphinx_github_changelog_token = os.environ.get("SPHINX_GITHUB_CHANGELOG_TOKEN")

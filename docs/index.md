@@ -15,22 +15,24 @@ content/multi-goal_api
 ```{toctree}
 :hidden:
 :caption: Environments
-envs/fetch
-envs/shadow_dexterous_hand
-envs/shadow_dexterous_hand_with_touch_sensors
+envs/fetch/index
+envs/shadow_dexterous_hand/index
+envs/maze/index
+envs/adroit_hand/index
+envs/franka_kitchen/index
+envs/MaMuJoCo/index
 ```
 
 ```{toctree}
 :hidden:
 :caption: Development
+release_notes
 Github <https://github.com/Farama-Foundation/Gymnasium-Robotics>
-Donate <https://farama.org/donations>
-Contribute to the Docs <https://github.com/Farama-Foundation/Gymnasium-Robotics/blob/main/.github/PULL_REQUEST_TEMPLATE.md>
 ```
-
 # Gymnasium-Robotics is a collection of robotics simulation environments for Reinforcement Learning
 
-```{figure} img/fetchpickandplace.gif
+
+```{figure} _static/videos/fetch/pick_and_place.gif
    :alt: Fetch Pick And Place
    :width: 500
    :height: 500
@@ -38,28 +40,18 @@ Contribute to the Docs <https://github.com/Farama-Foundation/Gymnasium-Robotics/
 
 This library contains a collection of Reinforcement Learning robotic environments that use the [Gymansium](https://gymnasium.farama.org/) API. The environments run with the [MuJoCo](https://mujoco.org/) physics engine and the maintained [mujoco python bindings](https://mujoco.readthedocs.io/en/latest/python.html).
 
-## Citation
+The creation and interaction with the robotic environments follow the Gymnasium interface:
 
-If using the `Fetch` or `Shadow Hand` environments, please cite:
+```{code-block} python
 
-```bibtex
-@misc{1802.09464,
-  Author = {Matthias Plappert and Marcin Andrychowicz and Alex Ray and Bob McGrew and Bowen Baker and Glenn Powell and Jonas Schneider and Josh Tobin and Maciek Chociej and Peter Welinder and Vikash Kumar and Wojciech Zaremba},
-  Title = {Multi-Goal Reinforcement Learning: Challenging Robotics Environments and Request for Research},
-  Year = {2018},
-  Eprint = {arXiv:1802.09464},
-}
-```
+import gymnasium as gym
+env = gym.make("FetchPickAndPlace-v2", render_mode="human")
+observation, info = env.reset(seed=42)
+for _ in range(1000):
+   action = policy(observation)  # User-defined policy function
+   observation, reward, terminated, truncated, info = env.step(action)
 
-To cite the `Shadow Dexterous Hand with Touch Sensors` environments, please use:
-
-```bibtex
-@article{melnik2021using,
-  title={Using tactile sensing to improve the sample efficiency and performance of deep deterministic policy gradients for simulated in-hand manipulation tasks},
-  author={Melnik, Andrew and Lach, Luca and Plappert, Matthias and Korthals, Timo and Haschke, Robert and Ritter, Helge},
-  journal={Frontiers in Robotics and AI},
-  pages={57},
-  year={2021},
-  publisher={Frontiers}
-}
+   if terminated or truncated:
+      observation, info = env.reset()
+env.close()
 ```
