@@ -2,6 +2,7 @@
    isort:skip_file
 """
 
+import ast
 import os
 
 from tqdm import tqdm
@@ -11,6 +12,11 @@ import gymnasium as gym
 from importlib import import_module
 from utils import trim
 
+# The following part is for MaMujoco envs, since they are not registered in gymnasium
+
+
+
+# The following part is for the rest which are registered in gymnasium
 
 # REWRITE: generate md's for new environments that don't belong to Fetch or Shadow Hand
 # TODO: use same format for Fetch and Shadow Hand
@@ -36,6 +42,8 @@ for env_spec in all_envs:
 entry_points = {env_spec.entry_point for env_spec in filtered_envs_by_name.values()}
 
 for entry_point in tqdm(entry_points):
+    env_type = ""
+    env_name = ""
     split_module_class = entry_point.split(":")
     module = split_module_class[0]
     env_class = split_module_class[1]
