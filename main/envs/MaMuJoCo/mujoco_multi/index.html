@@ -8,11 +8,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="" />
     <meta property="og:url" content="https://robotics.farama.org/envs/MaMuJoCo/mujoco_multi.html" /><meta property="og:image" content="https://robotics.farama.org//_static/img/robotics-github.png" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="&lt;no title&gt;" href="../obsk/" /><link rel="prev" title="&lt;no title&gt;" href="../many_segment_swimmer/" />
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Obsk" href="../obsk/" /><link rel="prev" title="Many Segment Swimmer" href="../many_segment_swimmer/" />
         <link rel="canonical" href="https://robotics.farama.org/envs/MaMuJoCo/mujoco_multi.html" />
 
     <link rel="shortcut icon" href="../../../_static/robotics-favicon.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07.dev1 -->
-        <title>&lt;no title&gt; - Gymnasium-Robotics Documentation</title>
+        <title>Mujoco Multi - Gymnasium-Robotics Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=721f65a87c37740baa8d605b09db5bec3a2987a8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=b0c92cd440df7c18a0306b0433406327ff2c572f" />
@@ -228,7 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../content/multi-goal_api/">Multi-goal API</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../fetch/">Fetch</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../fetch/pick_and_place/">Pick And Place</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../fetch/push/">Push</a></li>
@@ -262,15 +262,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../franka_kitchen/franka_kitchen/">Franka Kitchen</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../">MaMuJoCo (Multi-Agent MuJoCo)</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#episode-end">Episode End</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/#version-history">Version History</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">MaMuJoCo (Multi-Agent MuJoCo)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../coupled_half_cheetah/">Coupled Half Cheetah</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../many_segment_ant/">Many Segment Ant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../many_segment_swimmer/">Many Segment Swimmer</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Mujoco Multi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../obsk/">Obsk</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +323,9 @@
           </div>
           <article role="main">
             
-            <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Main file for MaMuJoCo includes the MultiAgentMujocoEnv class.
+            <section id="mujoco-multi">
+<h1>Mujoco Multi<a class="headerlink" href="#mujoco-multi" title="Permalink to this heading">#</a></h1>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Main file for MaMuJoCo includes the MultiAgentMujocoEnv class.
 </pre></div>
 </div>
 <p>This file is originally from the <code class="docutils literal notranslate"><span class="pre">schroederdewitt/multiagent_mujoco</span></code> repository hosted on GitHub
@@ -419,6 +418,7 @@ a list of observetion types per observation depthGenerates the default global ca
 scenario: The name of the MuJoCo Task</p>
 <p>Returns:
 The default Global Categories for the scenario (a list of all observable types for that domain)</p>
+</section>
 
           </article>
         </div>
@@ -430,7 +430,7 @@ The default Global Categories for the scenario (a list of all observable types f
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">&lt;no title&gt;</div>
+                <div class="title">Obsk</div>
               </div>
               <svg class="furo-related-icon">
                 <use href="#svg-arrow-right"></use>
@@ -445,7 +445,7 @@ The default Global Categories for the scenario (a list of all observable types f
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">&lt;no title&gt;</div>
+                <div class="title">Many Segment Swimmer</div>
                 
               </div>
             </a>
